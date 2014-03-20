@@ -33,7 +33,7 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   When I uncheck "G"
   Then the "G" checkbox should not be checked
   # enter step to "submit" the search form on the homepage
-  When I press "refresh"
+  When I press "Refresh"
   # enter step(s) to ensure that PG and R movies are visible
   Then I should see "The Incredibles"
   Then I should see "Raiders of the Lost Ark"
@@ -47,6 +47,6 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
 Scenario: all ratings selected
   # see assignment
   When I check the following ratings: G, R, PG-13, PG
-  When I press "refresh"
+  When I press "Refresh"
   Then I should see all movies
 
