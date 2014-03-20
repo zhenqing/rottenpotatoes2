@@ -24,10 +24,14 @@ Background: movies have been added to database
 Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step(s) to check the 'PG' and 'R' checkboxes
   When I check "PG"
+  Then the "PG" checkbox should be checked
   When I check "R"
+  Then the "R" checkbox should be checked
   # enter step(s) to uncheck all other checkboxes
   When I uncheck "PG-13"
+  Then the "PG-13" checkbox should not be checked
   When I uncheck "G"
+  Then the "G" checkbox should not be checked
   # enter step to "submit" the search form on the homepage
   When I press "refresh"
   # enter step(s) to ensure that PG and R movies are visible
