@@ -46,7 +46,12 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   Then I should not see "Chocolat" 
 Scenario: all ratings selected
   # see assignment
-  When I check the following ratings: G, R, PG-13, PG
+  #When I check the following ratings:G,R,PG,PG-13
+  When I check "PG"
+  When I check "G"
+  When I check "R"
+  When I check "PG-13"
+  Then the "R" checkbox should be checked
   When I press "Refresh"
   Then I should see all movies
 
